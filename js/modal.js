@@ -96,6 +96,16 @@ function switchContent(el) {
         "./src/img/mockup/mockup_specialPoint2_mob.jpg"
       );
       break;
+
+    case "#overseasBranding":
+      console.log("overseasBranding");
+      modalContents.innerHTML = `
+              <img src="./src/img/contents/overseas_branding.jpg" alt="">
+        `;
+      mockupContainer.style.display = "flex";
+      mockupContainer.style.display = "none";
+      break;
+
     case "#china1212":
       console.log("china1212");
       modalContents.innerHTML = `
@@ -393,23 +403,20 @@ function switchContent(el) {
         "./src/img/mockup/mockup_wooriExchange_mob.jpg"
       );
       break;
-    case "#overshipping":
-      console.log("overshipping");
+    case "#overseas":
+      console.log("overseas");
       modalContents.innerHTML = `
-            <img src="./src/img/contents/overshipping_1.jpg" alt="">
+            <img src="./src/img/contents/overseas_1.jpg" alt="">
             <video id="vodTitle" autoplay muted playsinline loop>
-                <source src="./src/vod/contents/overshipping.webm" type="video/webm" />
+                <source src="./src/vod/contents/overseas.webm" type="video/webm" />
             </video>
-            <img src="./src/img/contents/overshipping_2.jpg" alt="">
+            <img src="./src/img/contents/overseas_2.jpg" alt="">
       `;
       mockupContainer.style.display = "flex";
-      mockupPcImg.setAttribute(
-        "src",
-        "./src/img/mockup/mockup_overshipping.jpg"
-      );
+      mockupPcImg.setAttribute("src", "./src/img/mockup/mockup_overseas.jpg");
       mockupMobileImg.setAttribute(
         "src",
-        "./src/img/mockup/mockup_overshipping_mob.jpg"
+        "./src/img/mockup/mockup_overseas_mob.jpg"
       );
       break;
     case "#dosirakWifi":
