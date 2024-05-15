@@ -1,3 +1,71 @@
+const mediaUrls = {
+  images: [
+    "./src/img/contents/specialPoint.jpg",
+    "./src/img/contents/specialPoint2.jpg",
+    "./src/img/contents/overseas_branding.jpg",
+    "./src/img/contents/china1212.jpg",
+    "./src/img/contents/weddingFair.jpg",
+    "./src/img/contents/kTrend.jpg",
+    "./src/img/contents/samgyetang.jpg",
+    "./src/img/contents/blackFriday_1.jpg",
+    "./src/img/contents/blackFriday_2.jpg",
+    "./src/img/contents/blackFriday2_1.jpg",
+    "./src/img/contents/blackFriday2_2.jpg",
+    "./src/img/contents/courtAndCart.jpg",
+    "./src/img/contents/kolonBrand_sale.jpg",
+    "./src/img/contents/coupleItem.jpg",
+    "./src/img/contents/china1111.jpg",
+    "./src/img/contents/cozyScent.jpg",
+    "./src/img/contents/adultLifeStyle.jpg",
+    "./src/img/contents/beautyDevice.jpg",
+    "./src/img/contents/megaBenefit_1.jpg",
+    "./src/img/contents/megaBenefit_2.jpg",
+    "./src/img/contents/newYear2023.jpg",
+    "./src/img/contents/hanaTravelog.jpg",
+    "./src/img/contents/ktMembership.jpg",
+    "./src/img/contents/wooriExchange.jpg",
+    "./src/img/contents/overseas_1.jpg",
+    "./src/img/contents/overseas_2.jpg",
+    "./src/img/contents/dosirakWifi.jpg",
+    "./src/img/contents/5dollarItems.jpg",
+  ],
+  videos: [
+    "./src/vod/contents/specialPoint.webm",
+    "./src/vod/contents/china1212.webm",
+    "./src/vod/contents/valentine.webm",
+    "./src/vod/contents/blackFriday.webm",
+    "./src/vod/contents/blackFriday2.webm",
+    "./src/vod/contents/megaBenefit.webm",
+    "./src/vod/contents/newYear2023.webm",
+    "./src/vod/contents/hanaTravelog.webm",
+    "./src/vod/contents/ktMembership.webm",
+    "./src/vod/contents/overseas.webm",
+  ],
+};
+
+function preloadMedia(urls) {
+  // 이미지 로드
+  const images = [];
+  for (let i = 0; i < urls.images.length; i++) {
+    images[i] = new Image();
+    images[i].src = urls.images[i];
+  }
+
+  // 비디오 로드
+  const videos = [];
+  for (let j = 0; j < urls.videos.length; j++) {
+    videos[j] = document.createElement("video");
+    videos[j].preload = "auto"; // 브라우저가 비디오 파일 전체를 사전에 로드하도록 지시
+    videos[j].src = urls.videos[j];
+    videos[j].load(); // 명시적으로 로드 호출
+  }
+}
+
+// window.onload 이벤트 핸들러 등록
+window.onload = function () {
+  preloadMedia(mediaUrls);
+};
+
 const listAnchor = document.querySelectorAll(".container li a");
 const modal = document.getElementById("modal");
 const btnModalClose = modal.querySelector(".btn-modal-close");
